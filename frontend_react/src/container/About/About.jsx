@@ -17,7 +17,7 @@ const About = () => {
 
   return (
     <>
-      <h2 className="HEAD-TEXT">
+      <h2 className="HEAD-TEXT text-5xl">
         I Know That
         <span className="TEXT-BLUE-GRADIENT"> Good Apps</span>
         <br />

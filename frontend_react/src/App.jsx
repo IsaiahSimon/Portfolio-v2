@@ -4,7 +4,7 @@ import { About, Footer, Header, Skills, Work } from './container';
 import { Navbar } from './components';
 
 const App = () => (
-  <div className="app">
+  <div className="APP">
     <Navbar />
     <Header />
     <Work />

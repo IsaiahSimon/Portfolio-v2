@@ -36,36 +36,36 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="HEAD-TEXT text-5xl text-primary">Take a coffee & <span className='TEXT-GRADIENT'>chat with me</span></h2>
 
-      <div className="app__footer-cards">
-        <div className="app__footer-card ">
+      <div className="APP__FOOTER-CARDS">
+        <div className="APP__FOOTER-CARD ">
           <img src={images.email} alt="email" />
-          <a href="mailto:isimon.dev@gmail.com" className="p-text">isimon.dev@gmail.com</a>
+          <a href="mailto:isimon.dev@gmail.com" className="P-TEXT">isimon.dev@gmail.com</a>
         </div>
-        <div className="app__footer-card">
+        {/* <div className="APP__FOOTER-CARD">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+1 (123) 456-7890" className="p-text">+1 (123) 456-7890</a>
-        </div>
+          <a href="tel:+1 (123) 456-7890" className="P-TEXT">+1 (123) 456-7890</a>
+        </div> */}
       </div>
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
-          <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+        <div className="APP__FOOTER-FORM APP__FLEX mt-4">
+          <div className="APP__FLEX">
+            <input className="P-TEXT" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
           </div>
-          <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+          <div className="APP__FLEX">
+            <input className="P-TEXT" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
           </div>
           <div>
             <textarea
-              className="p-text"
+              className="P-TEXT"
               placeholder="Your Message"
               value={message}
               name="message"
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+          <button type="button" className="P-TEXT" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
         </div>
       ) : (
         <div>
@@ -79,7 +79,7 @@ const Footer = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Footer, 'app__footer'),
+  MotionWrap(Footer, 'APP__FOOTER'),
   'contact',
-  'app__whitebg',
+  'bg-neutral',
 );

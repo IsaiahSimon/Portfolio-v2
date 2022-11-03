@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
 const Skills = () => {
@@ -16,8 +16,8 @@ const Skills = () => {
   });
 
   return (
-    <div className="bg-bgWhite flex-1 w-full flex-col flex justify-center items-center">
-      <h2 className="text-4xl font-extrabold text-taupe uppercase">
+    <div className="flex-1 w-full flex-col flex justify-center items-center">
+      <h2 className="HEAD-TEXT text-5xl TEXT-GRADIENT">
         Whats my tech stack?
       </h2>
       <div className="w-4/5 mt-12 flex flex-row md:w-full md:flex-col">
@@ -48,4 +48,9 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(Skills, "skills");
+// export default AppWrap(Skills, "skills");
+export default AppWrap(
+  MotionWrap(Skills),
+  'skills',
+  'bg-black',
+);

@@ -40,11 +40,11 @@ const Work = () => {
 
   return (
     <section className="bg-bgWhite flex-1 w-full flex-col pt-0 mt-0 bg-base-200 min-h-screen">
-      <h2 className="xl:text-[6.5rem] lg:text-[4.5rem] text-[3.5rem] tracking-tight font-bold font-maven text-center">
+      <h2 className="HEAD-TEXT text-7xl">
         My <span className="TEXT-BLUE-GRADIENT">Portfolio </span>
       </h2>
       {/* Filter through the works */}
-      <div className="font-montserrat flex flex-row justify-center items-center flex-wrap mt-5 mr-0 mb-5">
+      <div className="flex justify-center mt-6">
         {["Web App", "React JS", "Full Stack App", "Creative Fun", "All"].map(
           (item, index) => (
             <div
@@ -60,16 +60,16 @@ const Work = () => {
 
       {/* Map over data from Sanity */}
       <motion.div
-        className="flex flex-wrap justify-center items-center"
+        className="APP__WORK-PORTFOLIO"
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
       >
         {filterWork.map((work, index) => (
           <div
-            className="w-[270px] flex-col m-8 p-4 bg-neutral text-charcoal cursor-pointer transition-all rounded-lg hover:shadow-lg hover:shadow-taupe lg:w-[470px] lg:p-5 lg:rounded-xl flex justify-center items-center shadow-white"
+            className="APP__WORK-ITEM APP__FLEX"
             key={index}
           >
-            <div className="w-full h-[230px] relative flex justify-center items-center">
+            <div className="APP__WORK-IMG APP__FLEX">
               <img
                 className="w-full h-full rounded-lg object-cover lg:h-[230px]"
                 src={urlFor(work.imgUrl)}
@@ -77,7 +77,7 @@ const Work = () => {
               />
 
               <motion.div
-                className="absolute top-0 bottom-0 left-0 right-0 w-full h-full hover:bg-[rgba(0,0,0,0.5)] opacity-0 rounded-lg flex justify-center items-center"
+                className="APP__WORK-HOVER APP__FLEX"
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
                   duration: 0.25,
@@ -87,18 +87,18 @@ const Work = () => {
               >
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
                   <motion.div
-                    className="w-12 h-12 hover:bg-[rgba(0,0,0,0.5)] rounded-lg text-white font-bold cursor-pointer m-4 transition-all flex justify-center items-center"
+                    className="APP__FLEX"
                     whileHover={{ scale: [0, 1] }}
                     whileInView={{ scale: [1, 0.9] }}
                     transition={{ duration: 0.25 }}
                   >
-                    <AiFillEye className="w-1/2 h-1/2 fill-white" />
+                    <AiFillEye />
                   </motion.div>
                 </a>
 
                 <a href={work.codeLink} target="_blank" rel="noreferrer">
                   <motion.div
-                    className="w-12 h-12 hover:bg-[rgba(0,0,0,0.5)] rounded-lg text-white font-bold cursor-pointer m-4 transition-all flex justify-center items-center"
+                    className="APP__FLEX"
                     whileHover={{ scale: [0, 1] }}
                     whileInView={{ scale: [1, 0.9] }}
                     transition={{ duration: 0.25 }}
@@ -109,14 +109,14 @@ const Work = () => {
               </motion.div>
             </div>
 
-            <div className="p-2 w-full relative flex-col flex justify-center items-center">
-              <h4 className="font-bold mt-4">{work.title}</h4>
-              <p className="PTEXT" style={{ marginTop: 10 }}>
+            <div className="APP__WORK-CONTENT APP__FLEX">
+              <h4 className="BOLD-TEXT">{work.title}</h4>
+              <p className="P-TEXT" style={{ marginTop: 10 }}>
                 {work.description}
               </p>
 
-              <div className="absolute bg-primary outline-neutral outline py-2 px-4 rounded-lg top-[-25px] flex jusitfy-content items-content">
-                <p className="text-black font-Maven">{work.tags[0]}</p>
+              <div className="APP__FLEX outline outline-neutral bg-primary py-2 px-4 rounded-lg absolute top-[-25px]">
+                <p className="P-TEXT-TAG">{work.tags[0]}</p>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ const Work = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Work, 'app__works'),
+  MotionWrap(Work, 'APP__WORKS'),
   'work',
   'app__primarybg',
 );
