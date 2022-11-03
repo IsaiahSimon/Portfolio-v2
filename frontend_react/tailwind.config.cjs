@@ -16,6 +16,7 @@ module.exports = {
         "success": "#36D399",
         "warning": "#FFA500",
         "error": "#F87272",
+        "softWhite": "#DDDDDD",
         transparent: 'transparent',
       },
       fontFamily: {
