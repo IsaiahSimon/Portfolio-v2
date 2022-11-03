@@ -11,12 +11,12 @@ const Navbar = () => {
   return (
     <nav className="backdrop-blur flex w-full justify-between items-center fixed px-8 py-4 h-[92px] bg-transparent z-50">
       <div className="flex justify-start">
-        {/* <img className="h-20 w-25" src={images.logo} alt="logo" /> */}
+        <img className="h-20 w-25 mt-1 ml-6" src={images.logo} alt="logo" />
       </div>
 
       {/* Desktop Menu */}
       <ul className="hidden flex-1 lg:flex justify-center items-center">
-        {["home", "about", "work", "skills", "contact"].map((item) => (
+        {["home", "work", "about", "skills", "contact"].map((item) => (
           <li
             className="mx-4 cursor-pointer flex-col uppercase text-softWhite"
             key={`link-${item}`}

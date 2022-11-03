@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary": "#2FDDF2",
-        "secondary": "#08fdd8",
+        "primary": "#08fdd8",
+        "secondary": "#2FDDF2",
         "accent": "#FD2155",
         "neutral": "#191D24",
         "base-100": "#10101A",
@@ -20,8 +20,8 @@ module.exports = {
         transparent: 'transparent',
       },
       fontFamily: {
-        Maven: ["Maven Pro", "sans-serif"],
-        Montserrat: ["Montserrat", "sans-serif"],
+        maven: ["Maven Pro", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
     screens: {

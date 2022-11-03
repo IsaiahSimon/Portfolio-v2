@@ -39,17 +39,16 @@ const Work = () => {
   };
 
   return (
-    <div className="bg-bgWhite flex-1 w-full flex-col">
-      <h2 className="text-4xl font-extrabold text-center text-charcoal uppercase">
-        My <span className="text-taupe">Creative </span>Portfolio
+    <section className="bg-bgWhite flex-1 w-full flex-col pt-0 mt-0 bg-base-200 min-h-screen">
+      <h2 className="xl:text-[6.5rem] lg:text-[4.5rem] text-[3.5rem] tracking-tight font-bold font-maven text-center">
+        My <span className="TEXT-BLUE-GRADIENT">Portfolio </span>
       </h2>
       {/* Filter through the works */}
-      <div className="appworkfilter flex flex-row justify-center items-center flex-wrap mt-16 mr-0 mb-8">
+      <div className="font-montserrat flex flex-row justify-center items-center flex-wrap mt-5 mr-0 mb-5">
         {["Web App", "React JS", "Full Stack App", "Creative Fun", "All"].map(
           (item, index) => (
             <div
-              className={`APP_WORK-FILTER-ITEM py-2 px-4 bg-white rounded-lg hover:text-white font-extrabold cursor-pointer transition-all m-2 hover:bg-taupe lg:py-4 lg:px-8 lg:rounded-xl flex justify-center items-center P-TEXT text-sm text-left text-charcoal ${activeFilter === item ? "bg-taupe text-white" : ""
-                }`}
+              className={`btn bg-transparent text-primary outline-primary hover:text-black hover:outline-secondary outline-2 outline rounded-none  hover:bg-secondary ${activeFilter === item ? "bg-secondary text-black" : "" }`}
               key={index}
               onClick={() => handleWorkFilter(item)}
             >
@@ -61,13 +60,13 @@ const Work = () => {
 
       {/* Map over data from Sanity */}
       <motion.div
-        className="APPWORKPORTFOLIO flex flex-wrap justify-center items-center"
+        className="flex flex-wrap justify-center items-center"
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
       >
         {filterWork.map((work, index) => (
           <div
-            className="w-[270px] flex-col m-8 p-4 bg-white text-charcoal cursor-pointer transition-all rounded-lg hover:shadow-lg hover:shadow-taupe lg:w-[470px] lg:p-5 lg:rounded-xl flex justify-center items-center"
+            className="w-[270px] flex-col m-8 p-4 bg-neutral text-charcoal cursor-pointer transition-all rounded-lg hover:shadow-lg hover:shadow-taupe lg:w-[470px] lg:p-5 lg:rounded-xl flex justify-center items-center shadow-white"
             key={index}
           >
             <div className="w-full h-[230px] relative flex justify-center items-center">
@@ -110,20 +109,20 @@ const Work = () => {
               </motion.div>
             </div>
 
-            <div className="APPWORK-CONTENT p-2 w-full relative flex-col flex justify-center items-center">
+            <div className="p-2 w-full relative flex-col flex justify-center items-center">
               <h4 className="font-bold mt-4">{work.title}</h4>
               <p className="PTEXT" style={{ marginTop: 10 }}>
                 {work.description}
               </p>
 
-              <div className="APPWORK-TAG absolute bg-white py-2 px-4 rounded-lg top-[-25px] flex jusitfy-content items-content">
-                <p className="PTEXT">{work.tags[0]}</p>
+              <div className="absolute bg-primary outline-neutral outline py-2 px-4 rounded-lg top-[-25px] flex jusitfy-content items-content">
+                <p className="text-black font-Maven">{work.tags[0]}</p>
               </div>
             </div>
           </div>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 };
 
