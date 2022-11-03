@@ -4,7 +4,7 @@ import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 
-const Footer = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -41,7 +41,7 @@ const Footer = () => {
       <div className="APP__FOOTER-CARDS">
         <div className="APP__FOOTER-CARD ">
           <img src={images.email} alt="email" />
-          <a href="mailto:isimon.dev@gmail.com" className="P-TEXT">isimon.dev@gmail.com</a>
+          <a href="mailto:isimon.dev@gmail.com" className="P-TEXT" target="_blank" rel='noreferrer'>isimon.dev@gmail.com</a>
         </div>
         {/* <div className="APP__FOOTER-CARD">
           <img src={images.mobile} alt="phone" />
@@ -79,7 +79,7 @@ const Footer = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Footer, 'APP__FOOTER'),
+  MotionWrap(Contact, 'APP__FOOTER'),
   'contact',
   'bg-neutral',
 );

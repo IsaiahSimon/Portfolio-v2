@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { About, Footer, Header, Skills, Work } from './container';
+import { About, Contact, Header, Skills, Work } from './container';
 import { Navbar } from './components';
+
 
 const App = () => (
   <div className="APP">
@@ -10,7 +11,7 @@ const App = () => (
     <Work />
     <About />
     <Skills />
-    <Footer />
+    <Contact />
   </div>
 );
 
