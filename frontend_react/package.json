@@ -12,11 +12,13 @@
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "daisyui": "^2.38.0",
+    "formik": "^2.2.9",
     "framer-motion": "^7.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
-    "react-tooltip": "^4.4.3"
+    "react-tooltip": "^4.4.3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",
