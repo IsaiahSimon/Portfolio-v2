@@ -110,15 +110,15 @@ const Contact = () => {
   console.log(formik.touched);
 
   return (
-    <form name="contact" onSubmit={formik.handSubmit} data-netlify="true">
+    <form name="contact" onSubmit={formik.handleSubmit} data-netlify="true">
       <div>
         <input
           id='firstName'
           name='firstName'
           type="text"
           placeholder='First Name'
-          onChange={formik.handleChange} //two way binding
-          onBlur={formik.handleBlur} //handle state when touched
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.firstName}
         />
         {formik.touched.firstName && formik.errors.firstName ? <p>{formik.errors.firstName}</p> : null}
@@ -128,8 +128,8 @@ const Contact = () => {
           name='lastName'
           type="text"
           placeholder='Last Name'
-          onChange={formik.handleChange} //two way binding
-          onBlur={formik.handleBlur} //handle state when touched
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.lastName}
         />
         {formik.touched.lastName && formik.errors.lastName ? <p>{formik.errors.lastName}</p> : null}
@@ -139,8 +139,8 @@ const Contact = () => {
           name='email'
           type="email"
           placeholder='Email'
-          onChange={formik.handleChange} //two way binding
-          onBlur={formik.handleBlur} //handle state when touched
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.email}
         />
       </div>
