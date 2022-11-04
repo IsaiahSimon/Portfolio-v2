@@ -36,7 +36,7 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className="HEAD-TEXT text-5xl text-primary">Take a coffee & <span className='TEXT-GRADIENT'>chat with me</span></h2>
+      <h2 className="HEAD-TEXT text-5xl text-primary">Have a <span className='TEXT-GRADIENT'>chat with me</span></h2>
 
       <div className="APP__FOOTER-CARDS">
         <div className="APP__FOOTER-CARD ">

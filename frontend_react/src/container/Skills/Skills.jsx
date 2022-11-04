@@ -22,22 +22,24 @@ const Skills = () => {
       </h2>
       <div className="w-4/5 mt-12 flex flex-row md:w-full md:flex-col">
         <motion.div className="flex-1 flex flex-wrap justify-center items-center mx-10 md:mx-24 lg:mx-28">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
               className="flex justify-center items-center flex-col text-center m-4 transition-all"
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              key={skill.name}
+              key={index}
             >
               <div
                 className="flex justify-center items-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white rounded-full hover:shadow-taupe hover:shadow-sm"
                 style={{ backgroundColor: skill.bgColor }}
               >
+              {skill.icon && (
                 <img
                   className="w-4/5 h-4/5 hover:animate-[spin_1s_infinite]"
                   src={urlFor(skill.icon)}
                   alt={skill.name}
                 />
+              )}
               </div>
               <p className="mt-4 lg:mt-8">{skill.name}</p>
             </motion.div>

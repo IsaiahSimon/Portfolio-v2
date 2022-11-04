@@ -39,7 +39,7 @@ const Work = () => {
   };
 
   return (
-    <section className="bg-bgWhite flex-1 w-full flex-col pt-0 mt-0 bg-base-200 min-h-screen">
+    <section className="flex-1 w-full flex-col pt-0 mt-0 bg-base-300 min-h-screen">
       <h2 className="HEAD-TEXT text-7xl">
         My <span className="TEXT-BLUE-GRADIENT">Portfolio </span>
       </h2>
@@ -129,5 +129,5 @@ const Work = () => {
 export default AppWrap(
   MotionWrap(Work, 'APP__WORKS'),
   'work',
-  'app__primarybg',
+  'bg-black',
 );
