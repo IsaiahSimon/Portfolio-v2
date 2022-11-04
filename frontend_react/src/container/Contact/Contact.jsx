@@ -110,7 +110,7 @@ const Contact = () => {
   console.log(formik.touched);
 
   return (
-    <form onSubmit={formik.handSubmit} data-netlify="true">
+    <form name="contact" onSubmit={formik.handSubmit} data-netlify="true">
       <div>
         <input
           id='firstName'
