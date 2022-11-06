@@ -48,12 +48,14 @@ const Contact = () => {
   return (
     <form
       className='form'
-      name='contact'
+      name='Contact'
+      action="#"
       onSubmit={formik.handleSubmit}
       onReset={formik.handleReset}
       data-netlify='true'
       data-netlify-honeypot='bot-field'
     >
+      <input type="hidden" name="form-name" value="Contact" />
       <label htmlFor="name">Name</label>
       <input
         id="name"
