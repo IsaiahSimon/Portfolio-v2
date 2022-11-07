@@ -44,7 +44,7 @@ const Work = () => {
         My <span className="TEXT-BLUE-GRADIENT">Portfolio </span>
       </h2>
       {/* Filter through the works */}
-      <div className="flex justify-center mt-6">
+      <div className="APP__FILTER">
         {["Web App", "React JS", "Full Stack App", "Creative Fun", "All"].map(
           (item, index) => (
             <div

@@ -24,7 +24,7 @@ const Skills = () => {
         <motion.div className="flex-1 flex flex-wrap justify-center items-center mx-10 md:mx-24 lg:mx-28">
           {skills.map((skill, index) => (
             <motion.div
-              className="flex justify-center items-center flex-col text-center m-4 transition-all"
+              className="w-[80px] flex justify-center items-center flex-col text-center m-4 transition-all"
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               key={index}

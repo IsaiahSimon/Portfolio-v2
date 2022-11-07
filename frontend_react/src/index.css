@@ -98,6 +98,7 @@
   width: 100%;
   flex-direction: column;
   padding: 0 2rem ;
+  margin-top: 85px;
 
   @media screen and (max-width: 450px) {
     padding: 4rem 1rem 2rem;
@@ -228,12 +229,15 @@
 }
 
 .APP__NAVIGATION {
-  display: flex;
-  justify-content: center;
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-
-  padding: 1rem;
+  position: fixed;
+  padding: 1rem 2rem;
+  height: 75px;
+  background-color: transparent;
+  z-index: 50;
 
   /* .APP__NAVIGATION-DOT {
     width: 10px;
@@ -255,18 +259,6 @@
   } */
 }
 
-@media screen and (max-width: 500px) {
-
-  .APP__NAVIGATION,
-  .APP__SOCIAL {
-    display: none;
-  }
-
-  .COPYRIGHT {
-    padding: 2rem;
-  }
-}
-
 /** HEADER */
 #home {
   position: relative;
@@ -278,23 +270,21 @@
   }
 }
 .APP__HEADER {
-  /* flex: 1; */
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
-  padding: 6rem 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  @media screen and (min-width: 2000px) {
-    padding-top: 8rem;
+  @media screen and (max-width: 1060px) {
+    flex-direction: column-reverse;
+    padding: 0 2rem;
+    min-height: 100vh;
+    margin-top: 2.5rem;
   }
 
-  @media screen and (max-width: 1200px) {
-    flex-direction: column;
-  }
+    @media screen and (max-width: 480px) {
+      margin-top: 3rem;
+    }
 
-  @media screen and (max-width: 450px) {
-    padding: 6rem 1rem 2rem;
-  }
 }
 
 /** ABOUT */
@@ -343,6 +333,15 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
+}
+
+.APP__FILTER {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  row-gap: 1rem;
 }
 
 .APP__WORK-PORTFOLIO {

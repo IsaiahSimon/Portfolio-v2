@@ -9,9 +9,9 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="backdrop-blur flex w-full justify-between items-center fixed px-8 py-4 h-[92px] bg-transparent z-50">
+    <nav className="APP__NAVIGATION backdrop-blur">
       <div className="flex justify-start">
-        <a href="#home"><img className="h-20 w-25 mt-1 ml-6" src={images.logo} alt="logo" /></a>
+        <a href="#home"><img className="h-[75px] w-[75px]" src={images.logo} alt="logo" /></a>
       </div>
 
       {/* Desktop Menu */}
@@ -32,7 +32,7 @@ const Navbar = () => {
       {/* Hamburger Menu */}
       <div className="flex justify-center items-center lg:hidden">
         <HiMenuAlt4
-          className="bg-taupe w-[35px] h-[35px] fill-white"
+          className="bg-black w-[35px] h-[35px] fill-white"
           onClick={() => setToggle(true)}
         />
 
@@ -46,10 +46,10 @@ const Navbar = () => {
               className="w-[35px] h-[35px] fill-white"
               onClick={() => setToggle(false)}
             />
-            <ul className="list-none m-0 p-0 h-full w-full flex justify-start items-start flex-col">
+            <ul className="bg-primary text-black font-montserrat list-none m-0 p-0 h-full w-full flex justify-start items-start flex-col rounded-lg">
               {["home", "about", "work", "skills"].map((item) => (
                 <li
-                  className="m-4 font-medium text-base uppercase cursor-auto hover:bg-white p-1"
+                  className="text-3xl m-4 font-medium text-base uppercase cursor-auto hover:bg-white p-1"
                   key={item}
                 >
                   {/* Close anchor tag after click */}
