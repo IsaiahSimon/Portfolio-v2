@@ -17,11 +17,8 @@ const scaleVariants = {
 
 const Header = () => {
   return (
-    // <section className="hero min-h-screen bg-base-300" >
-    <section className="bg-black min-h-screen flex w-full justify-center" >
-      {/* <div className="hero-content flex lg:flex-row-reverse"> */}
-      {/* <div className="flex items-center max-w-1600px pt-[140px] px-[6rem] pb-[270px] lg:py-[3rem] lg:pr-[7em] lg:pl-0 md:flex md:items-center md:justify-center ss:py-[2em] ss:px-0"> */}
-      <div className="APP__HEADER">
+    <section id="home" className="bg-black min-h-screen flex w-full justify-center " >
+      <div className="APP__HEADER ">
         <div>
           <div className="">
             <h1 className="xl:text-[6.5rem] lg:text-[4.5rem] text-[3.5rem] tracking-tight font-bold TEXT-GRADIENT font-maven">Hi. I'm Isaiah.</h1>

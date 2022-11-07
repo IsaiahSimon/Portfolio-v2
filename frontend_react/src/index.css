@@ -434,6 +434,15 @@
   }
 }
 
+.APP__WORK-BUTTONS {
+  width: 80%;
+  padding-top: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .APP__WORK-CONTENT {
   padding: 0.5rem;
   width: 100%;

@@ -45,10 +45,10 @@ const Work = () => {
       </h2>
       {/* Filter through the works */}
       <div className="APP__FILTER">
-        {["Web App", "React JS", "Full Stack App", "Creative Fun", "All"].map(
+        {["Featured Project", "Side Project", "All"].map(
           (item, index) => (
             <div
-              className={`btn bg-transparent text-primary outline-primary hover:text-black hover:outline-secondary outline-2 outline rounded-none  hover:bg-secondary ${activeFilter === item ? "bg-secondary text-black" : "" }`}
+              className={`btn bg-transparent text-primary outline-primary hover:text-black hover:outline-secondary outline-2 outline rounded-none  hover:bg-primary ${activeFilter === item ?  "bg-[#595050] text-black" : "" }`}
               key={index}
               onClick={() => handleWorkFilter(item)}
             >
@@ -76,6 +76,7 @@ const Work = () => {
                 alt={work.name}
               />
 
+              {/* Desktop  */}
               <motion.div
                 className="APP__WORK-HOVER APP__FLEX"
                 whileHover={{ opacity: [0, 1] }}
@@ -92,7 +93,7 @@ const Work = () => {
                     whileInView={{ scale: [1, 0.9] }}
                     transition={{ duration: 0.25 }}
                   >
-                    <AiFillEye />
+                    <AiFillEye className="w-1/2 h-1/2 fill-white" />
                   </motion.div>
                 </a>
 
@@ -117,6 +118,17 @@ const Work = () => {
 
               <div className="APP__FLEX outline outline-neutral bg-primary py-2 px-4 rounded-lg absolute top-[-25px]">
                 <p className="P-TEXT-TAG">{work.tags[0]}</p>
+              </div>
+
+              {/* Mobile */}
+              <div className="APP__WORK-BUTTONS" >
+                <a href={work.projectLink} target="_blank" rel="noreferrer">
+                  <AiFillEye className="w-9 h-9 fill-primary hover:fill-white" />
+                </a>
+
+                <a href={work.codeLink} target="_blank" rel="noreferrer">
+                  <AiFillGithub className="w-9 h-9 fill-primary hover:fill-white" />
+                </a>
               </div>
             </div>
           </div>
