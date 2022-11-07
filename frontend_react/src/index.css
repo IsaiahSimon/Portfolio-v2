@@ -267,6 +267,7 @@
 
   .APP__WRAPPER {
     padding: 0;
+    margin-top: 0;
   }
 }
 .APP__HEADER {

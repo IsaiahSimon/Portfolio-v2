@@ -20,7 +20,7 @@ const Skills = () => {
       <h2 className="HEAD-TEXT text-5xl TEXT-GRADIENT">
         Whats my tech stack?
       </h2>
-      <div className="w-4/5 mt-12 flex flex-row md:w-full md:flex-col">
+      <div className="mt-12 flex flex-row md:w-full md:flex-col">
         <motion.div className="flex-1 flex flex-wrap justify-center items-center mx-10 md:mx-24 lg:mx-28">
           {skills.map((skill, index) => (
             <motion.div
