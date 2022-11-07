@@ -10,10 +10,11 @@ const Skills = () => {
   useEffect(() => {
     const query = '*[_type == "skills"]';
 
-    client.fetch(query).then((data) => {
-      setSkills(data);
-    });
-  });
+    client
+      .fetch(query)
+      .then((data) => setSkills(data))
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="flex-1 w-full flex-col flex justify-center items-center">
