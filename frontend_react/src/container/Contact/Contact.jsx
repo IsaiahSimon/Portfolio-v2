@@ -15,13 +15,14 @@ const encode = (data) => {
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
-    .max(50, 'Must be 50 characters or less')
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
     .required('Required'),
   email: Yup.string()
     .email('Invalid email address')
     .required('Required'),
   message: Yup.string()
-    .max(500, 'Must be 500 characters or less')
+    .max(1000, 'Must be 1000 characters or less')
     .required('Required'),
 });
 
@@ -55,14 +56,6 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className="HEAD-TEXT text-5xl text-primary">Have a <span className='TEXT-GRADIENT'>chat with me</span></h2>
-      <div className="APP__FOOTER-CARDS">
-        <div className="APP__FOOTER-CARD ">
-          <img src={images.email} alt="email" />
-          <a href="mailto:isimon.dev@gmail.com" className="P-TEXT" target="_blank" rel='noreferrer'>isimon.dev@gmail.com</a>
-        </div>
-      </div>
-
       {!isFormSubmitted ? (
         <Formik
           initialValues={{ name: '', email: '', message: ''}}
@@ -71,7 +64,7 @@ const Contact = () => {
         >
         {(formik) => (
           <Form
-            className='APP__FOOTER-FORM APP__FLEX mt-4'
+            className='decor'
             name='contact'
             action="#"
             onSubmit={formik.handleSubmit}
@@ -81,84 +74,94 @@ const Contact = () => {
           >
             <input type="hidden" name="form-name" value="contact" />
 
-            {/* Name Input */}
-            <Label text="Name" required={true} htmlFor="name" />
-            <div className="APP__FLEX">
-              <Field
-                id="name"
-                name="name"
-                type="text"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
-                className="P-TEXT"
-                placeholder="Your Name"
-              ></Field>
-              <ErrorMessage
-                component="div"
-                className="text-red-700"
-                name="name"
-              />
-              {/* {formik.touched.name && formik.errors.name ? (
-                <div>{formik.errors.name}</div>
-              ) : null} */}
+            <div className="form-left-decoration"></div>
+            <div className="form-right-decoration"></div>
+            <div className="circle"></div>
+
+            <div className="form-inner">
+                <h2 className="HEAD-TEXT mb-3 text-5xl text-primary">Have a <span className='TEXT-GRADIENT'>chat with me</span></h2>
+
+                {/* Name Input */}
+                <Label text="Name" required={true} htmlFor="name" />
+                <div className="">
+                  <Field
+                    id="name"
+                    name="name"
+                    type="text"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.name}
+                    className="form-field-text mt-1"
+                    placeholder="Your Name"
+                  ></Field>
+                  <ErrorMessage
+                    component="div"
+                    className="validation"
+                    name="name"
+                  />
+                </div>
+
+                {/* Email Input */}
+                <Label text="Email" required={true} htmlFor="email" />
+                <div className="">
+                  <Field
+                    id="email"
+                    name="email"
+                    type="email"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                    className="form-field-text mt-1"
+                    placeholder="Your Email"
+                  ></Field>
+                  <ErrorMessage
+                    component="div"
+                    className="validation"
+                    name="email"
+                  />
+                </div>
+
+                {/* Message Input */}
+                <Label text="Message" required={true} htmlFor="message" />
+                <div>
+                  <Field
+                    id="message"
+                    name="message"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.message}
+                    className="form-field-text mt-1"
+                    placeholder="Your Message"
+                    component='textarea'
+                  ></Field>
+                  <ErrorMessage
+                    component="div"
+                    className="validation"
+                    name="message"
+                  />
+                </div>
+
+                {/* Form Buttons */}
+                <ul className='flex justify-between '>
+                  <li>
+                    <button
+                      type="submit"
+                      className="P-TEXT"
+                      onClick={handleSubmit}
+                    >
+                      {!loading ? 'Send Message' : 'Sending...'}
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="reset"
+                      value="Reset"
+                    >
+                      Reset
+                    </button>
+                  </li>
+                </ul>
             </div>
-
-            {/* Email Input */}
-            <Label text="Email" required={true} htmlFor="email" />
-            <div className="APP__FLEX">
-              <Field
-                id="email"
-                name="email"
-                type="email"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-                className="P-TEXT"
-                placeholder="Your Email"
-              ></Field>
-              <ErrorMessage
-                component="div"
-                className="text-red-700"
-                name="email"
-              />
-              {/* {formik.touched.email && formik.errors.email ? (
-                <div>{formik.errors.email}</div>
-              ) : null} */}
-            </div>
-
-
-            {/* Message Input */}
-            <Label text="Message" required={true} htmlFor="message" />
-            <div>
-              <Field
-                id="message"
-                name="message"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.message}
-                className="P-TEXT"
-                placeholder="Your Message"
-                component='textarea'
-              ></Field>
-              <ErrorMessage
-                component="div"
-                className="text-red-700"
-                name="message"
-              />
-              {/* {formik.touched.message && formik.errors.message ? (
-                <div>{formik.errors.message}</div>
-              ) : null} */}
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="P-TEXT"
-              onClick={handleSubmit}
-            >
-              {!loading ? 'Send Message' : 'Sending...'}
-            </button>
           </Form>
         )}
         </Formik>
@@ -173,8 +176,4 @@ const Contact = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(Contact, 'APP__FOOTER'),
-  'contact',
-  'bg-neutral',
-);
+export default AppWrap(Contact, 'contact', 'bg-black');

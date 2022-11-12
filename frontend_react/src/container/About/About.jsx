@@ -51,8 +51,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(About, 'APP__ABOUT'),
-  'about',
-  'bg-neutral',
-);
+export default AppWrap(About, 'about', 'bg-neutral');

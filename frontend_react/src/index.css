@@ -12,12 +12,14 @@
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 
   --font-base: "Montserrat", sans-serif;
+  --font-accent: "Maven Pro", sans-serif;
   --primary-color: #08fdd8;
   --secondary-color: #2FDDF2;
   --accent-color: #FD2155;
+  --neutral-color: #191D24;
   --success-color: #36D399;
   --black-color: #030303;
-  --lightGray-color: #DDDDDD;
+  --softWhite-color: #DDDDDD;
   --gray-color: #A6ADBA;
   --brown-color: #46364a;
   --white-color: #ffffff;
@@ -100,23 +102,8 @@
   padding: 0 2rem ;
   margin-top: 85px;
 
-  @media screen and (max-width: 450px) {
-    padding: 4rem 1rem 2rem;
-  }
-}
-
-.COPYRIGHT {
-  width: 100%;
-  padding: 2rem 0 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-  p {
-    text-transform: uppercase;
-    color: var(--black-color);
+  @media screen and (max-width: 620px) {
+    padding: 0 1rem;
   }
 }
 
@@ -143,7 +130,7 @@
 .P-TEXT {
   font-family: "Montserrat", "sans-serif";
   text-align: left;
-  color: var(--lightGray-color);
+  color: var(--softWhite-color);
   line-height: 1.5;
 
   @media screen and (min-width: 2000px) {
@@ -191,7 +178,7 @@
     border-radius: 50%;
     background-color: var(--white-color);
     margin: 0.25rem 0;
-    border: 1px solid var(--lightGray-color);
+    border: 1px solid var(--softWhite-color);
 
     display: flex;
     justify-content: center;
@@ -297,14 +284,19 @@
 
 .APP__PROFILES {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 2rem;
+
+  @media screen and (max-width: 620px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .APP__PROFILE-ITEM {
-  width: 190px;
+  width: 20%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -318,15 +310,10 @@
     object-fit: cover;
   }
 
-  @media screen and (mix-width: 2000px) {
-    width: 370px;
-    margin: 2rem 4rem;
-
-
-    img {
-      height: 320px;
-    }
+  @media screen and (max-width: 620px) {
+    width: 80%;
   }
+
 }
 
 /** WORK */
@@ -464,11 +451,7 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
-  margin-top: 3rem;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
+  margin-top: 0;
 }
 
 .APP__FOOTER-CARDS {
@@ -477,22 +460,18 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 2rem;
-  margin-top: 1rem;
+  margin: 0 ;
 
   .APP__FOOTER-CARD {
-    min-width: 290px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-
-    margin: 1rem 0;
-    padding: 1rem;
+    min-width: 290px;
+    flex-direction: row;
+    padding: 0 1rem;
     border-radius: 20px;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid var(--primary-color);
 
     transition: all 0.3s ease-in-out;
 
@@ -512,8 +491,10 @@
     }
 
     &:hover {
-      background-color: var(--success-color);
       color: var(--black-color);
+      border: none;
+      border-right: 2px solid var(--primary-color);
+      border-left: 2px solid var(--primary-color);
     }
 
     @media screen and (max-width: 450px) {
@@ -527,8 +508,9 @@
 }
 
 .APP__FOOTER-FORM {
+  display: flex;
   width: 60%;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0 2rem;
 
   div {
@@ -550,7 +532,7 @@
       background-color: transparent;
 
       font-family: var(--font-base);
-      color: var(--lightGray-color);
+      color: var(--softWhite-color);
       outline: none;
     }
 
@@ -588,10 +570,135 @@
     width: 100%;
     margin: 1rem 0;
   }
+
+  @media screen and (max-width: 620px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0;
+  }
 }
 
+
 /** CONTACT FORM */
-.FORM__LABEL {
-  align-self: flex-start;
-  margin: 0.5rem;
+form {
+  position: relative;
+  width: 80%;
+  border-radius: 30px;
+  background: var(--neutral-color);
+}
+
+.form-left-decoration,
+.form-right-decoration {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+  background: var(--accent-color);
+}
+
+.form-left-decoration {
+  bottom: 60px;
+  left: -30px;
+}
+
+.form-right-decoration {
+  top: 60px;
+  right: -30px;
+}
+
+.form-left-decoration:before,
+.form-left-decoration:after,
+.form-right-decoration:before,
+.form-right-decoration:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 30px;
+  background: var(--neutral-color);
+}
+
+.form-left-decoration:before {
+  top: -20px;
+}
+
+.form-left-decoration:after {
+  top: 20px;
+  left: 10px;
+}
+
+.form-right-decoration:before {
+  top: -20px;
+  right: 0;
+}
+
+.form-right-decoration:after {
+  top: 20px;
+  right: 10px;
+}
+
+.circle {
+  position: absolute;
+  bottom: 80px;
+  left: -55px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+
+.form-inner {
+  padding: 40px;
+}
+
+.form-inner input,
+.form-inner textarea {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #d0dfe8;
+}
+
+.form-inner textarea {
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  background: tra;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--softWhite-color);
+}
+
+button:hover {
+  background: var(--primary-color);
+  color: var(--black-color);
+}
+
+@media (min-width: 568px) {
+  form {
+    width: 60%;
+  }
+}
+
+.validation {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--accent-color);
+}
+
+.form-field-text {
+  color: var(--black-color);
+  font-family: var(--font-base);
 }
