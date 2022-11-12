@@ -589,3 +589,9 @@
     margin: 1rem 0;
   }
 }
+
+/** CONTACT FORM */
+.FORM__LABEL {
+  align-self: flex-start;
+  margin: 0.5rem;
+}
