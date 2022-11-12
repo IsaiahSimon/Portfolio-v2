@@ -13,6 +13,9 @@ const encode = (data) => {
 }
 
 const Contact = () => {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -55,78 +58,87 @@ const Contact = () => {
           <a href="mailto:isimon.dev@gmail.com" className="P-TEXT" target="_blank" rel='noreferrer'>isimon.dev@gmail.com</a>
         </div>
       </div>
-      <form
-        className='APP__FOOTER-FORM APP__FLEX mt-4'
-        name='contact'
-        action="#"
-        onSubmit={formik.handleSubmit}
-        onReset={formik.handleReset}
-        data-netlify='true'
-        data-netlify-honeypot='bot-field'
-      >
-        <input type="hidden" name="form-name" value="contact" />
-
-        {/* Name Input */}
-        <label htmlFor="name">Name</label>
-        <div className="APP__FLEX">
-          <input
-            id="name"
-            name="name"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-            className="P-TEXT"
-            placeholder="Your Name"
-          />
-          {formik.touched.name && formik.errors.name ? (
-            <div>{formik.errors.name}</div>
-          ) : null}
-        </div>
-
-        {/* Email Input */}
-        <label htmlFor="email">Email Address</label>
-        <div className="APP__FLEX">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-            className="P-TEXT"
-            placeholder="Your Email"
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <div>{formik.errors.email}</div>
-          ) : null}
-        </div>
-
-        {/* Message Input */}
-        <label htmlFor="message">Message</label>
-        <div>
-          <textarea
-            id="message"
-            name="message"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.message}
-            className="P-TEXT"
-            placeholder="Your Message"
-          />
-          {formik.touched.message && formik.errors.message ? (
-            <div>{formik.errors.message}</div>
-          ) : null}
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="P-TEXT"
+      {!isFormSubmitted ? (
+        <form
+          className='APP__FOOTER-FORM APP__FLEX mt-4'
+          name='contact'
+          action="#"
+          onSubmit={formik.handleSubmit}
+          onReset={formik.handleReset}
+          data-netlify='true'
+          data-netlify-honeypot='bot-field'
         >
-          Submit
-        </button>
-      </form>
+          <input type="hidden" name="form-name" value="contact" />
+
+          {/* Name Input */}
+          <label htmlFor="name">Name</label>
+          <div className="APP__FLEX">
+            <input
+              id="name"
+              name="name"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+              className="P-TEXT"
+              placeholder="Your Name"
+            />
+            {formik.touched.name && formik.errors.name ? (
+              <div>{formik.errors.name}</div>
+            ) : null}
+          </div>
+
+          {/* Email Input */}
+          <label htmlFor="email">Email Address</label>
+          <div className="APP__FLEX">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+              className="P-TEXT"
+              placeholder="Your Email"
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div>{formik.errors.email}</div>
+            ) : null}
+          </div>
+
+          {/* Message Input */}
+          <label htmlFor="message">Message</label>
+          <div>
+            <textarea
+              id="message"
+              name="message"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.message}
+              className="P-TEXT"
+              placeholder="Your Message"
+            />
+            {formik.touched.message && formik.errors.message ? (
+              <div>{formik.errors.message}</div>
+            ) : null}
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="P-TEXT"
+            onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}
+          >
+            Submit
+          </button>
+        </form>
+      ) : (
+        <div>
+          <h3 className="head-text">
+            Thank you for getting in touch!
+          </h3>
+        </div>
+      )}
     </>
   );
 };
