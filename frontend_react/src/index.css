@@ -104,6 +104,8 @@
 
   @media screen and (max-width: 620px) {
     padding: 0 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -651,6 +653,10 @@ form {
 
 .form-inner {
   padding: 40px;
+
+  @media screen and (max-width: 620px) {
+    padding: 10px
+  }
 }
 
 .form-inner input,

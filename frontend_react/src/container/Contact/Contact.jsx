@@ -142,7 +142,7 @@ const Contact = () => {
                 </div>
 
                 {/* Form Buttons */}
-                <ul className='flex justify-between '>
+                <ul className='flex justify-between'>
                   <li>
                     <button
                       type="submit"
