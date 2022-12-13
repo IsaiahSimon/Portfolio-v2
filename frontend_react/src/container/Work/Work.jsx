@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { motion } from "framer-motion";
 
-import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
+import { AppWrap, MotionWrap } from "../../wrapper";
+import { urlFor, client } from "../../client";
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -41,21 +41,21 @@ const Work = () => {
   return (
     <section className="flex-1 w-full flex-col pt-0 mt-0 bg-base-300 min-h-screen">
       <h2 className="HEAD-TEXT text-7xl">
-        My <span className="TEXT-BLUE-GRADIENT">Portfolio </span>
+        My <span className="TEXT-BLUE-GRADIENT">Work</span>
       </h2>
       {/* Filter through the works */}
       <div className="APP__FILTER">
-        {["Featured Project", "Side Project", "All"].map(
-          (item, index) => (
-            <div
-              className={`btn bg-transparent text-primary outline-primary hover:text-black hover:outline-secondary outline-2 outline rounded-none  hover:bg-primary ${activeFilter === item ?  "bg-[#595050] text-black" : "" }`}
-              key={index}
-              onClick={() => handleWorkFilter(item)}
-            >
-              {item}
-            </div>
-          )
-        )}
+        {["Web Development", "Fun & Creative", "All"].map((item, index) => (
+          <div
+            className={`btn bg-transparent text-primary outline-primary hover:text-black hover:outline-secondary outline-2 outline rounded-none  hover:bg-primary ${
+              activeFilter === item ? "bg-[#595050] text-black" : ""
+            }`}
+            key={index}
+            onClick={() => handleWorkFilter(item)}
+          >
+            {item}
+          </div>
+        ))}
       </div>
 
       {/* Map over data from Sanity */}
@@ -65,10 +65,7 @@ const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
       >
         {filterWork.map((work, index) => (
-          <div
-            className="APP__WORK-ITEM APP__FLEX"
-            key={index}
-          >
+          <div className="APP__WORK-ITEM APP__FLEX" key={index}>
             <div className="APP__WORK-IMG APP__FLEX">
               <img
                 className="w-full h-full rounded-lg object-cover lg:h-[230px]"
@@ -121,7 +118,7 @@ const Work = () => {
               </div>
 
               {/* Mobile */}
-              <div className="APP__WORK-BUTTONS" >
+              <div className="APP__WORK-BUTTONS">
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
                   <AiFillEye className="w-9 h-9 fill-primary hover:fill-white" />
                 </a>
@@ -138,4 +135,4 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, 'work', 'bg-black');
+export default AppWrap(Work, "work", "bg-black");

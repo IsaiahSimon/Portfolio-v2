@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
+import { AppWrap, MotionWrap } from "../../wrapper";
+import { urlFor, client } from "../../client";
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
@@ -17,12 +17,9 @@ const About = () => {
 
   return (
     <>
-      <h2 className="HEAD-TEXT text-5xl">
-        I Know That
-        <span className="TEXT-BLUE-GRADIENT"> Good Apps</span>
-        <br />
-        Means
-        <span className="TEXT-BLUE-GRADIENT"> Good Business</span>
+      <h2 className="HEAD-TEXT text-7xl">
+        My
+        <span className="TEXT-BLUE-GRADIENT"> Expertise</span>
       </h2>
 
       <div className="APP__PROFILES">
@@ -34,10 +31,7 @@ const About = () => {
             className="APP__PROFILE-ITEM"
             key={about.title + index}
           >
-            <img
-              src={urlFor(about.imgUrl)}
-              alt={about.title}
-            />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className="BOLD-TEXT" style={{ marginTop: 20 }}>
               {about.title}
             </h2>
@@ -51,4 +45,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, 'about', 'bg-neutral');
+export default AppWrap(About, "about", "bg-neutral");

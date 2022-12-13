@@ -18,8 +18,8 @@ const Skills = () => {
 
   return (
     <div className="flex-1 w-full flex-col flex justify-center items-center">
-      <h2 className="HEAD-TEXT text-5xl TEXT-GRADIENT">
-        Whats my tech stack?
+      <h2 className="HEAD-TEXT text-5xl">
+        Whats my <span className="TEXT-BLUE-GRADIENT">tech stack</span>?
       </h2>
       <div className="mt-12 flex flex-row md:w-full md:flex-col ">
         <motion.div className="flex-1 flex flex-wrap justify-center items-center ss:mx-10 md:mx-24 lg:mx-28">
@@ -34,13 +34,13 @@ const Skills = () => {
                 className="flex justify-center items-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white rounded-full hover:shadow-taupe hover:shadow-sm"
                 style={{ backgroundColor: skill.bgColor }}
               >
-              {skill.icon && (
-                <img
-                  className="w-4/5 h-4/5 hover:animate-[spin_1s_infinite]"
-                  src={urlFor(skill.icon)}
-                  alt={skill.name}
-                />
-              )}
+                {skill.icon && (
+                  <img
+                    className="w-4/5 h-4/5 hover:animate-[spin_1s_infinite]"
+                    src={urlFor(skill.icon)}
+                    alt={skill.name}
+                  />
+                )}
               </div>
               <p className="mt-4 lg:mt-8">{skill.name}</p>
             </motion.div>
@@ -51,5 +51,4 @@ const Skills = () => {
   );
 };
 
-
-export default AppWrap(Skills, 'skills', 'bg-neutral');
+export default AppWrap(Skills, "skills", "bg-neutral");
