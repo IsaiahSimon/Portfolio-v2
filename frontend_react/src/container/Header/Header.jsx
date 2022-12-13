@@ -24,18 +24,15 @@ const Header = () => {
       <div className="APP__HEADER ">
         <div>
           <div className="">
-            <h1 className="xl:text-[6.5rem] lg:text-[4.5rem] text-[3.5rem] tracking-tight font-bold TEXT-BLUE-GRADIENT font-maven">
+            <h1 className="xl:text-[6.5rem] lg:text-[4.5rem] text-[3.5rem] tracking-tight font-bold TEXT-GRADIENT font-maven">
               Hi. I'm Isaiah.
             </h1>
-            <h2 className="xl:text-[4.5rem] lg:text-[2.5rem] text-[1.5rem] tracking-tight font-bold text-softWhite font-maven leading-normal">
+            <h2 className="xl:text-[4.5rem] lg:text-[2.5rem] text-[1.5rem] tracking-tight font-bold TEXT-GRADIENT font-maven leading-normal">
               I build things for the web.
             </h2>
             <p className="font-Montserrat text-softWhite text-[1.3rem] max-w-[580px] mt-[1.3em] mb-[1.3em] leading-normal">
-              Software Engineer, Web Developer.
-              <br />
-              Currently open to new roles.
-              <br />
-              Send me an email or contact me via the form below!
+              I’m a software engineer specializing in building exceptional
+              digital experiences. Currently, open to new opportunities.
             </p>
             <a
               href="#contact"
